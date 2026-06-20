@@ -3,3 +3,4 @@ Werkzeug
 plotly
 pandas
 reportlab
+gunicorn
