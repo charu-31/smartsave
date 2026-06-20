@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>💰 SMARTSAVE Dashboard</h1>
+
+<h2>🔔 Upcoming Bills</h2>
+
+{% for reminder in reminders %}
+<div class="card">
+    <h3>{{ reminder[0] }}</h3>
+    <p>Due: {{ reminder[1] }}</p>
+</div>
+{% endfor %}
+
+<div class="card">
+    <h3>🔥 Savings Streak</h3>
+    <h2>{{ streak }} Months</h2>
+</div>
+
+<div class="card">
+    <h3>Total Income</h3>
+    <h2>₹ {{ total_income }}</h2>
+</div>
+
+<div class="card">
+    <h3>Total Expenses</h3>
+    <h2>₹ {{ total_expenses }}</h2>
+</div>
+
+<div class="card">
+    <h3>Savings</h3>
+    <h2>₹ {{ savings }}</h2>
+</div>
+
+<div class="card">
+    <h3>Total Transactions</h3>
+    <h2>{{ total_transactions }}</h2>
+</div>
+
+<div class="card">
+    <h3>📈 Savings Rate</h3>
+    <h2>{{ savings_rate }}%</h2>
+</div>
+
+<div class="card">
+    <h3>🏥 Financial Health</h3>
+    <h2>{{ health_score }}</h2>
+</div>
+
+<div class="card">
+    <h3>🔥 Highest Spending</h3>
+    <h2>{{ highest_category }}</h2>
+</div>
+
+<div class="card">
+    <h3>📅 This Month</h3>
+    <h2>₹ {{ this_month }}</h2>
+</div>
+
+<div class="card">
+    <h3>📅 Last Month</h3>
+    <h2>₹ {{ last_month }}</h2>
+</div>
+
+<div class="card">
+    <h3>📈 Change</h3>
+    <h2>{{ change_percent }}%</h2>
+</div>
+
+<hr>
+
+<h2>📊 Spending By Category</h2>
+
+<table border="1" cellpadding="10">
+
+<tr>
+    <th>Category</th>
+    <th>Total Amount</th>
+</tr>
+
+{% for category in category_data %}
+<tr>
+    <td>{{ category[0] }}</td>
+    <td>₹ {{ category[1] }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+<hr>
+
+<h2>📈 Expense Distribution</h2>
+
+<div class="chart-box">
+{% if graph_html %}
+    {{ graph_html|safe }}
+{% else %}
+    <p>No expense data available yet.</p>
+{% endif %}
+</div>
+
+<hr>
+
+<h2>📈 Monthly Expense Trend</h2>
+
+<div class="chart-box">
+{% if line_graph %}
+    {{ line_graph|safe }}
+{% else %}
+    <p>No monthly expense trend yet.</p>
+{% endif %}
+</div>
+
+{% endblock %}

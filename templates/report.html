@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+ {% extends "base.html" %}
+
+{% block content %}   
+
+<h1>📄 Generate AI Report</h1>
+
+<form method="POST">
+
+    <input type="text"
+           name="name"
+           placeholder="Enter your name"
+           required>
+
+    <label>Select Month</label>
+    <input type="month"
+           name="report_month"
+           required>
+
+    <button type="submit">
+        Generate Report
+    </button>
+
+</form>
+
+
+<br><br>
+
+{% endblock %}
+
+</body>
+</html>

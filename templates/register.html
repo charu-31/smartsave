@@ -1,0 +1,38 @@
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="auth-container">
+    <h1>SMARTSAVE</h1>
+
+    <div class="auth-box">
+
+        <h1>Create Account</h1>
+
+        <form method="POST">
+
+            <label>Username</label>
+            <input type="text" name="username" placeholder="Enter username" required>
+
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Enter email" required>
+
+            <label>Password</label>
+            <input type="password" name="password" placeholder="Create password" required>
+
+            <button type="submit">Register></button>
+
+        </form>
+
+        <p>
+            already start savings
+            <a href="/login">login here</a>
+        </p>
+
+    </div>
+
+</div>
+
+</body>
