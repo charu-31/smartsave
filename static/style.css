@@ -403,6 +403,19 @@ body.bg-light {
     color: #111827;
     font-size: 14px;
 }
+.goal-result {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+    line-height: 1.8;
+    word-wrap: break-word;
+}
+
+.goal-result p {
+    margin-bottom: 12px;
+    color: black;
+}
 /* Mobile support without changing layout */
 @media (max-width: 768px) {
 
