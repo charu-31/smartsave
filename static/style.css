@@ -1,0 +1,415 @@
+/* ===== BODY ===== */
+
+
+body {
+        
+        background: #0f0c29;
+        background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+        min-height: 100vh;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        
+    }
+
+
+/* ===== NAVBAR ===== */
+nav {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 14px 30px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* ===== LINKS (navbar buttons) ===== */
+a {
+    text-decoration: none;
+    font-weight: 600;
+    margin-right: 6px;
+    color: rgba(255, 255, 255, 0.85);
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+}
+
+/* ===== CARDS ===== */
+.card {
+    background: rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 25px;
+    margin: 15px;
+    width: 260px;
+    display: inline-block;
+    vertical-align: top;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.15);
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* ===== FORMS (inputs, selects, buttons) ===== */
+input, select, textarea {
+    width: 100%;
+    padding: 10px 14px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input::placeholder, textarea::placeholder {
+    color: rgba(255, 255, 255, 0.45);
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+select option {
+    background: #302b63;
+    color: #fff;
+}
+
+label {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+}
+
+h1, h2, h3 {
+    color: #fff;
+}
+
+button, input[type="submit"] {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+    border: none;
+    padding: 11px 26px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.2s;
+    width: auto;
+    margin-top: 4px;
+}
+
+button:hover, input[type="submit"]:hover {
+    opacity: 0.88;
+    transform: translateY(-1px);
+}
+/* ===== TABLE ===== */
+table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+    margin-top: 12px;
+    color: #fff;
+}
+
+thead {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+th {
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+td {
+    padding: 12px 16px;
+    font-size: 15px;
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+tr:hover td {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+/* ===== UPGRADED CARDS ===== */
+.card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.13), rgba(255,255,255,0.06));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 24px 28px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255,255,255,0.2);
+    width: 260px;
+    margin-top: 20px;
+    color: #fff;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+/* card title (the h-tag or strong inside card) */
+.card h3, .card strong, .card p:first-child {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #f3f3f4;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.card h2 {
+    color: #ecd68f;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+/* big number/value inside card */
+.card h1, .card .value, .card p:last-child {
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.1;
+}
+
+/* ===== SECTION HEADINGS (Spending By Category etc.) ===== */
+h2, h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin: 32px 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: 0.3px;
+}
+
+h2::after, h3::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, rgba(255,255,255,0.2), transparent);
+    margin-left: 8px;
+}
+/* ===== HOME PAGE OVERRIDE ===== */
+body.bg-light {
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e) !important;
+    min-height: 100vh;
+}
+
+.container h1 {
+    font-size: 48px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.container .lead {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+.container hr {
+    border-color: rgba(255, 255, 255, 0.15);
+    margin: 24px 0;
+}
+
+/* ===== KILL ALL BOOTSTRAP BTN COLORS ===== */
+.btn-primary, .btn-danger, .btn-success,
+.btn-warning, .btn-info, .btn-secondary, .btn-dark {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    color: #fff !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 14px !important;
+    padding: 16px 20px !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.3px;
+    transition: all 0.25s ease !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2) !important;
+}
+
+.btn-primary:hover, .btn-danger:hover, .btn-success:hover,
+.btn-warning:hover, .btn-info:hover, .btn-secondary:hover, .btn-dark:hover {
+    background: rgba(255, 255, 255, 0.16) !important;
+    border-color: rgba(255, 255, 255, 0.35) !important;
+    color: #fff !important;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.35) !important;
+}
+
+/* ===== AI ADVISOR BUTTON (special accent) ===== */
+.btn-dark {
+    background: linear-gradient(135deg, rgba(102,126,234,0.4), rgba(118,75,162,0.4)) !important;
+    border-color: rgba(102, 126, 234, 0.5) !important;
+}
+
+.btn-dark:hover {
+    background: linear-gradient(135deg, rgba(102,126,234,0.6), rgba(118,75,162,0.6)) !important;
+}
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background: #111827;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebar h2 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.sidebar h4 {
+    color: #d1d5db;
+    margin-bottom: 25px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: white;
+    padding: 12px 15px;
+    border-radius: 10px;
+    transition: 0.3s;
+    background: rgba(255,255,255,0.05);
+}
+
+.sidebar a:hover {
+    background: #4f46e5;
+}
+
+.main-content {
+    flex: 1;
+    padding: 30px;
+}
+/* Auth page */
+
+.auth-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-box {
+    width: 400px;
+    background: white;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+}
+
+.auth-box h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #111827;
+}
+
+.auth-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.auth-box input {
+    padding: 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+    color: black;   /* ADD THIS */
+    background: white; /* ADD THIS */
+}
+
+.auth-box input:focus {
+    border-color: #6366f1;
+}
+
+.auth-box button {
+    padding: 14px;
+    background: #6366f1;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.auth-box button:hover {
+    background: #4f46e5;
+}
+
+.auth-box p {
+    text-align: center;
+    margin-top: 20px;
+    color: #6b7280;
+}
+
+.auth-box a {
+    color: #6366f1;
+    text-decoration: none;
+    font-weight: bold;
+}
+.auth-box label {
+    display: block;
+    margin-bottom: 8px;
+    margin-top: 10px;
+    font-weight: 600;
+    color: #111827;
+    font-size: 14px;
+}
+/* Mobile support without changing layout */
+@media (max-width: 768px) {
+
+    body {
+        min-width: 1200px;
+        overflow-x: auto;
+        overflow-y: auto;
+    }
+
+}
