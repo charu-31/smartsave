@@ -330,10 +330,10 @@ def budget():
     cursor = conn.cursor()
 
     cursor.execute("""
-    SELECT category, budget_amount
-    FROM budgets
-    """)
-
+SELECT category, budget_amount
+FROM budgets
+WHERE user_id = ?
+""", (session["user_id"],))
     budgets = cursor.fetchall()
 
     budget_data = []
@@ -343,8 +343,9 @@ def budget():
         cursor.execute("""
 SELECT SUM(amount)
 FROM expenses
-WHERE LOWER(TRIM(category)) = LOWER(TRIM(?))
-""", (category,))
+WHERE user_id = ?
+AND LOWER(TRIM(category)) = LOWER(TRIM(?))
+""", (session["user_id"], category))
         spent = cursor.fetchone()[0] or 0
 
         used_percent = round((spent / budget) * 100, 1) if budget > 0 else 0
@@ -1064,8 +1065,12 @@ def search_expenses():
         conn = sqlite3.connect("finance.db")
         cursor = conn.cursor()
 
-        query = "SELECT amount, category, description, date FROM expenses WHERE 1=1"
-        values = []
+        query = query = """
+SELECT amount, category, description, date
+FROM expenses
+WHERE user_id = ?
+"""
+        values = [session["user_id"]]
 
         if category:
             query += " AND category LIKE ?"
