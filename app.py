@@ -668,7 +668,7 @@ def goal_planner():
         goal_name,
         goal_amount
         ))
-        
+        conn.commit()
         conn.close()
 
         monthly_savings = income - expenses
