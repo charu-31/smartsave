@@ -90,9 +90,10 @@ def dashboard():
     cursor.execute("""
     SELECT SUM(amount)
     FROM expenses
-    WHERE strftime('%Y-%m', date) =
+    WHERE user_id=?
+    AND strftime('%Y-%m', date) =
     strftime('%Y-%m', 'now', '-1 month')
-    """)
+    """,(session["user_id"],))
 
     last_month = cursor.fetchone()[0]
 
@@ -101,6 +102,7 @@ def dashboard():
     strftime('%Y-%m', date) as month,
     SUM(amount)
     FROM expenses
+    WHERE user_id=?
     GROUP BY month
     ORDER BY month
     """)
@@ -668,6 +670,7 @@ def goal_planner():
         goal_name,
         goal_amount
         ))
+
         conn.commit()
         conn.close()
 
