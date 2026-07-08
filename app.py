@@ -105,7 +105,7 @@ def dashboard():
     WHERE user_id=?
     GROUP BY month
     ORDER BY month
-    """)
+    """,(session["user_id"],))
 
     monthly_data = cursor.fetchall()
 
